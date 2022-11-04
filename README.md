@@ -6,9 +6,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 To execute the calculator, PyQt5 must be installed.
-'''c
+```c
 python -m pip install pyqt5
-'''
+```
 
 ## Built With
 
