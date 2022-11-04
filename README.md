@@ -12,7 +12,7 @@ python -m pip install pyqt5
 
 ## Built With
 
-+or PyQt5 - The GUI framework used
+-   PyQt5 - The GUI framework used
 
 ## Contributing
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
