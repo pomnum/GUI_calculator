@@ -12,14 +12,14 @@ python -m pip install pyqt5
 
 ## Built With
 
-+PyQt5 - The GUI framework used
+PyQt5 - The GUI framework used
 
 ## Contributing
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 studyingrabbit - Initial work - studyingrabbit
-Seungho Yoo - Init repository - this repository
+jiwon Choi - Init repository - this repository
 See also the list of contributors who participated in this project.
 
 ## License
