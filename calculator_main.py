@@ -1,10 +1,12 @@
 import sys
+import numpy as np
 from PyQt5.QtWidgets import *
 
 class Main(QDialog):
     def __init__(self):
         super().__init__()
         self.init_ui()
+        
 
     def init_ui(self):
         main_layout = QVBoxLayout()
@@ -25,7 +27,7 @@ class Main(QDialog):
         ### layout_equation_solution.addRow(label_equation, self.equation)
         layout_equation_solution.addRow(label_solution, self.solution)
 
-        ### 사칙연상 버튼 생성
+        ### 사칙연산 버튼 생성
         button_plus = QPushButton("+")
         button_minus = QPushButton("-")
         button_product = QPushButton("x")
@@ -41,7 +43,10 @@ class Main(QDialog):
         button_product.clicked.connect(lambda state, operation = "*": self.button_operation_clicked(operation))
         button_division.clicked.connect(lambda state, operation = "/": self.button_operation_clicked(operation))
         button_remain.clicked.connect(lambda state, operation = "%": self.button_operation_clicked(operation))
-
+        button_reciprocal.clicked.connect(lambda state, operation = "": self.button_reciprocal_clicked(operation))
+        button_square.clicked.connect(lambda state, operation = "": self.button_square_clicked(operation))
+        button_sroot.clicked.connect(lambda state, operation = "": self.button_sroot_clicked(operation))
+        
         ### 사칙연산 버튼을 layout_operation 레이아웃에 추가
         layout_number.addWidget(button_plus, 2, 3)
         layout_number.addWidget(button_minus, 1, 3)
@@ -127,6 +132,24 @@ class Main(QDialog):
         solution = self.solution.text()
         solution = solution[:-1]
         self.solution.setText(solution)
+
+    def button_reciprocal_clicked(self, operation):
+        solution = self.solution.text()
+        solution = float(solution)
+        solution = np.reciprocal(solution)
+        self.solution.setText(str(solution))
+
+    def button_square_clicked(self, operation):
+        solution = self.solution.text()
+        solution = float(solution)
+        solution = np.square(solution)
+        self.solution.setText(str(solution))
+
+    def button_sroot_clicked(self, operation):
+        solution = self.solution.text()
+        solution = float(solution)
+        solution = np.sqrt(solution)
+        self.solution.setText(str(solution))        
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
